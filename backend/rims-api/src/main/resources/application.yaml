@@ -1,0 +1,35 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: rims-api
+  datasource:
+    url: jdbc:sqlserver://localhost:1433;databaseName=RIMS_DB;encrypt=true;trustServerCertificate=true
+    username: sa
+    password: sa123
+  jpa:
+    hibernate:
+      ddl-auto: create
+    open-in-view: false
+    show-sql: false
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: 
+    password: 
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
+jwt:
+  signerKey: "Bkvw045nqvIXbwCtsf9fNAH8olxBeipB"
+vnpay:
+  url: "https://sandbox.vnpayment.vn/paymentv2/vpcpay.html"
+  tmn-code: "D90AVGT4"
+  hash-secret: "8BJJ73AOD4FMOY3DKHD0ST66RCKY488C"
+  version: "2.1.0"
+  command: "pay"
+  return-url: "http://localhost:8080/rims/cashier/payments/vnpay-callback"
